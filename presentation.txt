@@ -1,0 +1,112 @@
+1. Babel
+  1.1 what is babel?
+  1.2 Why we need babel?
+  1.3 How it works?
+    1.3.1 Show examples: react-codemod, how to create your own code mod
+  1.4 What plugins is using crehana?
+    1.4.0 what is a stage in babel
+    1.4.1 transform-imports: to modify library imports
+    1.4.2 styled-components
+    1.4.3 lodash
+    1.4.4 rechats
+    1.4.5 transform-inline-environment-variables
+    1.4.6 react-hot-loader/babel
+    1.4.7 plugin-proposal-export-default-from
+    1.4.8 proposal-decorators
+    1.4.9 proposal-class-properties
+    1.4.10 syntax-dynamic-import (server)
+    1.4.11 proposal-optional-chaining
+    1.4.12 preset-env: what is a preset?
+      1.4.12.1 modules options (commonjs vs es6 imports for webpack tree shaking)
+      1.4.12.2 targets option
+    1.4.13 preset-react
+    1.4.14 preset-typescript
+    1.4.15 dynamic-import-node
+    1.4.16 module.resolver
+    1.4.17 import-graphql
+    1.4.18 transform-react-constants-elements
+    1.4.19 transform-react-remove-proptypes
+    1.4.20 transform-react-inline-elements
+    1.4.21 transform-remove-console
+    1.4.22 transform-remove-debugger
+2. webpack
+  2.1 What is webpack?
+  2.2 How webpack works?
+  2.3 What is a webpack loader?
+    2.3.1 graphql-tag
+    2.3.2 react
+    2.3.3 style-loader
+    2.3.4 css-loader
+    2.3.5 postcss-loader
+      2.3.6 What is post-css?
+    2.3.6 sass-loader
+    2.3.7 svgr-react-loader
+  2.4 How to create your own webpack loader?
+  2.5 What is a webpack plugin?
+    2.5.1 How a webpack plugin works?
+    2.5.2 lodash-webpack-plugin
+    2.5.3 webpack-bundle-analyer
+    2.5.4 optimize-css-assets-webpack-plugin
+    2.5.5 terser-webpack-plugin
+    2.5.6 Manifest webpack plugin (custom)
+    2.5.7 webpack.IgnorePlugin
+    2.5.8 webpack.DefinePlugin
+    2.5.9 webpack-build-notifier+
+    2.5.10 webpack-merge
+    2.5.11 webpack.NamedModulesPlugin
+    2.5.12 webpack.NoEmitOnErrorsPlugin
+    2.5.13 webpack-html-plugin
+    2.5.14 html-webpack-hard-disk-plugin
+    2.5.15 Webpack DLL
+      2.5.15.1 What is a dll?
+      2.5.15.2 webpack.DllPlugin
+      2.5.15.3 webpack.DllReferencePlugin
+    2.5.16 workbox-webpack-plugin
+      2.5.16.1 What is a service worker
+      2.5.16.2 Workbox webpack plugin options
+  2.6 How to create your own webpack plugin?
+  2.7 Organising webpack webpack configurations for differents environments
+    2.7.0 webpack configurations: show the configuration.js
+    2.7.1 base.js
+    2.7.2 Shared.js
+    2.7.3 dll.js
+    2.7.4 development.js
+    2.7.5 production.js
+      2.7.5.1 Using the webpack node api
+    2.7.6 developmentWihtoutDll.js
+    2.7.7 withoutDll.js
+  2.8 CLI's
+    2.8.1 What is a CLI?
+    2.8.2 process_child packages
+    2.8.3 Ecosystem in node: show packages used to create cli's (shell.js)
+      2.8.3.1 Ora.js
+      2.8.3.2 Inquirer
+      2.8.3.3 shelljs
+      2.9.3.4 chalk
+      2.9.3.5 
+  2.9 crehana-cli
+    2.9.1 References: react-boilerplate, create-react-app (first repo where i can read the code)
+    2.9.2 Interactive vs Default modes
+    2.9.3 Handling cli params (flats)
+    2.9.4 Configuring inquirer: Handler inputs and errors
+    2.9.5 How create entries dynamically
+    2.9.10 Custom webpack dev server
+      2.9.11 webpack-dev-middleware
+      2.9.12 webpack-hot-middleware
+      2.9.13 Creating a custom webpack server: Show tips (path vs HMR_PATH, etc)
+      2.9.14 Logger helpers
+  2.10 webpack without dll cli
+    2.10.11 dev vs prod
+  2.x webpack node externals
+  2.x extra packges
+    2.x.1 cross-env
+3. Django tags
+  3.1 creh_static_files: webpack_static for javascript and css using the webpack manifest (explaing the django manifest for static files)
+4. Web performance
+  4.1 Gatsby: what is it? what is for?
+  4.2 Gatsby crehana
+    4.2.1 the problem with babel and es6/typescript code
+    4.2.2 The django Template structure for i18n support
+    4.2.3 Implementing the static pages script
+5. SSR
+
