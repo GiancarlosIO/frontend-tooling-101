@@ -168,24 +168,25 @@ var createMethod = function (IS_INCLUDES) {
           <TextStyled textAlign="left" size="24px" margin="24px 0">Source code transformations (codemods):</TextStyled>
           <Image src={images.babelCodeModExample} />
         </Slide>
+        {/* ============================= 9 =============================== */}
+
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel can do for you? 🤔</Heading>
           <TextStyled textAlign="left" size="24px" margin="24px 0">Source code transformations (codemods):</TextStyled>
           <Image src={images.babelCodeModExample2} />
         </Slide>
-        {/* ============================= 9 =============================== */}
+        {/* ============================= 10 =============================== */}
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel can do for you? 🤔</Heading>
           <List>
             <ListItemStyled size="24px">And more! (eslint plugins, optimize javascript, etc)</ListItemStyled>
           </List>
         </Slide>
-        {/* ============================= 10 =============================== */}
+        {/* ============================= 11 =============================== */}
         <Slide transition={["fade"]} bgColor="secondary" textColor="primary">
-          <Heading textAlign="center" size={6} textColor="primary" caps>Crehana</Heading>
           <TextStyled textColor="white">🔥 Babel setup 🔥</TextStyled>
         </Slide>
-        {/* ============================= 11 =============================== */}
+        {/* ============================= 12 =============================== */}
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel plugins are being used in real web application? 🤔</Heading>
           <List>
@@ -215,7 +216,7 @@ var createMethod = function (IS_INCLUDES) {
             <ListItemStyled size="18px">@babel/plugin-transform-remove-debugger</ListItemStyled>
           </List>
         </Slide>
-        {/* ============================= 12 =============================== */}
+        {/* ============================= 13 =============================== */}
         <Slide transition={["fade"]} bgColor="tertiary">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel plugins/presets are being used in crehana? 🤔</Heading>
           <TextStyled textAlign="left">@babel/preset-env</TextStyled>
@@ -266,7 +267,7 @@ var createMethod = function (IS_INCLUDES) {
             <ListItemStyled size="9px">@babel/plugin-transform-unicode-regex": "^7.6.2</ListItemStyled>
           </List>
         </Slide>
-        {/* ============================= 13 =============================== */}
+        {/* ============================= 14 =============================== */}
         <CodeSlide
           transition={["fade", "fade"]}
           code={`// Javascript module system
@@ -314,6 +315,7 @@ define(['react', 'jquery'], function (dep1, dep2) {
             { loc: [18, 35], title: "AMD: Async Module Definition" }
           ]}
         />
+        {/* ============================= 15 =============================== */}
         <Slide transition={["fade"]} bgColor="white" textColor="primary">
           <TextStyled>babel.config.js</TextStyled>
         </Slide>
