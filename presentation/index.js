@@ -34,7 +34,8 @@ const images = {
   babelTrasnformSyntaxExample: require("../assets/babel-transform-syntax-example.png"),
   babelPolyfillExample: require("../assets/babel-polyfill-example.png"),
   babelCodeModExample: require("../assets/babel-code-mod-example.png"),
-  babelCodeModExample2: require("../assets/babel-code-mod-example-2.png")
+  babelCodeModExample2: require("../assets/babel-code-mod-example-2.png"),
+  javascriptModules: require("../assets/javascript-modules.png")
 };
 
 const ListItemStyled = styled(ListItem)`
@@ -186,7 +187,7 @@ var createMethod = function (IS_INCLUDES) {
         </Slide>
         {/* ============================= 11 =============================== */}
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading textAlign="left" size={6} textColor="primary" caps>What babel plugins are being used in crehana? 🤔</Heading>
+          <Heading textAlign="left" size={6} textColor="primary" caps>What babel plugins are being used in real web application? 🤔</Heading>
           <List>
             <ListItemStyled size="18px">@babel/preset-env</ListItemStyled>
             <ListItemStyled size="18px">@babel/preset-react</ListItemStyled>
@@ -216,8 +217,105 @@ var createMethod = function (IS_INCLUDES) {
         </Slide>
         {/* ============================= 12 =============================== */}
         <Slide transition={["fade"]} bgColor="tertiary">
-          <Heading textAlign="left" size={6} textColor="primary" caps>What babel plugins are being used in crehana? 🤔</Heading>
+          <Heading textAlign="left" size={6} textColor="primary" caps>What babel plugins/presets are being used in crehana? 🤔</Heading>
+          <TextStyled textAlign="left">@babel/preset-env</TextStyled>
+          <List>
+            <ListItemStyled size="9px">@babel/helper-module-imports": "^7.0.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/helper-plugin-utils": "^7.0.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-proposal-async-generator-functions": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-proposal-dynamic-import": "^7.5.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-proposal-json-strings": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-proposal-object-rest-spread": "^7.6.2</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-proposal-optional-catch-binding": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-proposal-unicode-property-regex": "^7.6.2</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-syntax-async-generators": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-syntax-dynamic-import": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-syntax-json-strings": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-syntax-object-rest-spread": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-syntax-optional-catch-binding": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-arrow-functions": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-async-to-generator": "^7.5.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-block-scoped-functions": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-block-scoping": "^7.6.3</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-classes": "^7.5.5</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-computed-properties": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-destructuring": "^7.6.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-dotall-regex": "^7.6.2</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-duplicate-keys": "^7.5.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-exponentiation-operator": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-for-of": "^7.4.4</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-function-name": "^7.4.4</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-literals": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-member-expression-literals": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-modules-amd": "^7.5.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-modules-commonjs": "^7.6.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-modules-systemjs": "^7.5.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-modules-umd": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-named-capturing-groups-regex": "^7.6.3</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-new-target": "^7.4.4</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-object-super": "^7.5.5</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-parameters": "^7.4.4</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-property-literals": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-regenerator": "^7.4.5</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-reserved-words": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-shorthand-properties": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-spread": "^7.6.2</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-sticky-regex": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-template-literals": "^7.4.4</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-typeof-symbol": "^7.2.0</ListItemStyled>
+            <ListItemStyled size="9px">@babel/plugin-transform-unicode-regex": "^7.6.2</ListItemStyled>
+          </List>
+        </Slide>
+        {/* ============================= 13 =============================== */}
+        <CodeSlide
+          transition={["fade", "fade"]}
+          code={`// Javascript module system
 
+// ES6 Modules
+import React from 'react';
+export default MyComponent;
+
+
+// Commonjs
+const React = require('react');
+module.exports = MyComponent;
+
+
+// AMD: Async Module Definition
+define(['react', 'jquery'], function (dep1, dep2) {
+    //Define the module value by returning a value.
+    return function () {};
+});
+
+// UMD: Universal Module Definition (pattern to configure several module system)
+(function (root, factory) {
+    if (typeof define === "function" && define.amd) {
+        define(["react", "jquery"], factory);
+    } else if (typeof exports === "object") {
+        module.exports = factory(require("react"), require("jquery"));
+    } else {
+        root.Requester = factory(root.$, root._);
+    }
+}(this, function (react, $) {
+    // this is where I defined my module implementation
+
+    var Requester = { // ... };
+
+    return Requester;
+}));
+
+            `}
+          lang="js"
+          textSize={24}
+          ranges={[
+            { loc: [2, 5], title: "ES6 Modules" },
+            { loc: [7, 10], title: "Commonjs" },
+            { loc: [12, 17], title: "Commonjs" },
+            { loc: [18, 35], title: "AMD: Async Module Definition" }
+          ]}
+        />
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled>babel.config.js</TextStyled>
         </Slide>
       </Deck>
     );
