@@ -14,7 +14,8 @@ import {
   Slide,
   Text,
   Image,
-  Link
+  Link,
+  Code
 } from "spectacle";
 
 // Import theme
@@ -35,7 +36,19 @@ const images = {
   babelPolyfillExample: require("../assets/babel-polyfill-example.png"),
   babelCodeModExample: require("../assets/babel-code-mod-example.png"),
   babelCodeModExample2: require("../assets/babel-code-mod-example-2.png"),
-  javascriptModules: require("../assets/javascript-modules.png")
+  javascriptModules: require("../assets/javascript-modules.png"),
+  babelPluginLodashExample: require("../assets/babel-plugin-lodash.png"),
+  babelPluginStyledComponents: require("../assets/babel-plugin-styled-components.png"),
+  babelPluginRecharts: require("../assets/babel-plugin-recharts.png"),
+  babelPluginTransformInlineVariables: require("../assets/babel-plugin-transform-inline-environment-variables.png"),
+  babelPluginProposalExportDefault: require("../assets/babel-plugin-proposal-export-default-from.png"),
+  babelPluginProposalDecorators: require("../assets/babel-plugin-proposal-decorators.png"),
+  babelPluginProposalClassProperties: require("../assets/babel-plugin-proposal-class-properties.png"),
+  babelPresetEnv: require("../assets/babel-preset-env.png"),
+  babelPresetEnvEntry: require("../assets/babel-preset-env-entry.png"),
+  babelPresetEnvUsage: require("../assets/babel-preset-env-usage.png"),
+  babelPresetReact: require("../assets/babel-preset-react.png"),
+  babelPresetReactPragma: require("../assets/babel-preset-react-pragma.png")
 };
 
 const ListItemStyled = styled(ListItem)`
@@ -73,7 +86,7 @@ export default class Presentation extends React.Component {
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
           🔨 Frontend tooling - 101 🔨
           </Heading>
-          {/* <Text margin="10px 0 0" textColor="tertiary" size={1} fit bold>
+          {/* <Text margin="10px 0 0" textColor="white" size={1} fit bold>
             open the presentation/index.js file to get started
           </Text> */}
         </Slide>
@@ -81,7 +94,7 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="white">
           <Heading size={6} textColor="secondary" caps>Agenda</Heading>
           <List>
-            <ListItemStyled>Babel: Presets and ListItemStyled</ListItemStyled>
+            <ListItemStyled>Babel: Presets and Plugins</ListItemStyled>
             <ListItemStyled>Webpack: Loaders and plugins</ListItemStyled>
             <ListItemStyled>Django: Webpack integration</ListItemStyled>
             <ListItemStyled>Web Performance</ListItemStyled>
@@ -90,30 +103,30 @@ export default class Presentation extends React.Component {
           </List>
         </Slide>
         {/* ============================= 2 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading size={6} textColor="primary" caps>Babel</Heading>
           <TextStyled>Babel is a JavaScript compiler.</TextStyled>
           <TextStyled size={20}>It helps to convert modern JavaScript into plain old ES5 JavaScript.</TextStyled>
         </Slide>
         {/* ============================= 3 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading size={6} textColor="primary" caps>Why do you need babel? 🤔</Heading>
           <Image src={images.canIUseES6} />
         </Slide>
         {/* ============================= 4 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading textAlign="left" size={6} textColor="primary" caps>How babel works under the hood?</Heading>
           <TextStyled textAlign="left" size="24px" lineHeight="3">It use <Link textAlign="left" href="https://astexplorer.net/">AST</Link> to transform your javascript code</TextStyled>
 
         </Slide>
         {/* ============================= 5 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel can do for you? 🤔</Heading>
           <TextStyled textAlign="left" size="24px" lineHeight="3">Transform syntax:</TextStyled>
           <Image src={images.babelTrasnformSyntaxExample} />
         </Slide>
         {/* ============================= 6 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel can do for you? 🤔</Heading>
           <TextStyled textAlign="left" size="24px" margin="24px 0">Polyfill features that are missing in your target environment (through @babel/polyfill):</TextStyled>
           <Image src={images.babelPolyfillExample} />
@@ -163,20 +176,20 @@ var createMethod = function (IS_INCLUDES) {
           ]}
         />
         {/* ============================= 8 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel can do for you? 🤔</Heading>
           <TextStyled textAlign="left" size="24px" margin="24px 0">Source code transformations (codemods):</TextStyled>
           <Image src={images.babelCodeModExample} />
         </Slide>
         {/* ============================= 9 =============================== */}
 
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel can do for you? 🤔</Heading>
           <TextStyled textAlign="left" size="24px" margin="24px 0">Source code transformations (codemods):</TextStyled>
           <Image src={images.babelCodeModExample2} />
         </Slide>
         {/* ============================= 10 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel can do for you? 🤔</Heading>
           <List>
             <ListItemStyled size="24px">And more! (eslint plugins, optimize javascript, etc)</ListItemStyled>
@@ -187,7 +200,7 @@ var createMethod = function (IS_INCLUDES) {
           <TextStyled textColor="white">🔥 Babel setup 🔥</TextStyled>
         </Slide>
         {/* ============================= 12 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel plugins are being used in real web application? 🤔</Heading>
           <List>
             <ListItemStyled size="18px">@babel/preset-env</ListItemStyled>
@@ -217,7 +230,7 @@ var createMethod = function (IS_INCLUDES) {
           </List>
         </Slide>
         {/* ============================= 13 =============================== */}
-        <Slide transition={["fade"]} bgColor="tertiary">
+        <Slide transition={["fade"]} bgColor="white">
           <Heading textAlign="left" size={6} textColor="primary" caps>What babel plugins/presets are being used in crehana? 🤔</Heading>
           <TextStyled textAlign="left">@babel/preset-env</TextStyled>
           <List>
@@ -318,6 +331,71 @@ define(['react', 'jquery'], function (dep1, dep2) {
         {/* ============================= 15 =============================== */}
         <Slide transition={["fade"]} bgColor="white" textColor="primary">
           <TextStyled>babel.config.js</TextStyled>
+        </Slide>
+        {/* ============================= 16 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 32px 0">babel-plugin-styled-components</TextStyled>
+          <Image src={images.babelPluginStyledComponents} />
+        </Slide>
+        {/* ============================= 17 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 32px 0">babel-plugin-lodash</TextStyled>
+          <Image src={images.babelPluginLodashExample} />
+        </Slide>
+        {/* ============================= 18 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 32px 0">babel-plugin-recharts</TextStyled>
+          <Image src={images.babelPluginRecharts} />
+        </Slide>
+        {/* ============================= 18 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 32px 0">babel-plugin-transform-inline-environment-variables</TextStyled>
+          <Image src={images.babelPluginTransformInlineVariables} />
+        </Slide>
+        {/* ============================= 19 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 32px 0">@babel/plugin-proposal-export-default-from</TextStyled>
+          <Image width="800px" src={images.babelPluginProposalExportDefault} />
+          <TextStyled margin="32px 0 32px 0">@babel/plugin-proposal-decorators</TextStyled>
+          <Image width="800px" src={images.babelPluginProposalDecorators} />
+        </Slide>
+        {/* ============================= 20 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 32px 0">@babel/plugin-proposal-class-properties</TextStyled>
+          <Image width="800px" src={images.babelPluginProposalClassProperties} />
+        </Slide>
+        {/* ============================= 21 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 32px 0">@babel/preset-env</TextStyled>
+          <Image width="800px" src={images.babelPresetEnv} />
+        </Slide>
+        {/* ============================= 22 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">@babel/preset-env</TextStyled>
+          <Code textSize="28px">{"{ useBuiltIns: 'entry' }"}</Code>
+
+          <Image width="800px" src={images.babelPresetEnvEntry} />
+        </Slide>
+        {/* ============================= 23 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">@babel/preset-env</TextStyled>
+          <Code textSize="28px">{"{ useBuiltIns: 'usage' }"}</Code>
+
+          <Image width="800px" src={images.babelPresetEnvUsage} />
+        </Slide>
+        {/* ============================= 24 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">@babel/preset-react</TextStyled>
+          <TextStyled size="16px" textColor="secondary">@babel/plugin-syntax-jsx</TextStyled>
+          <TextStyled size="16px" textColor="secondary">@babel/plugin-transform-react-jsx</TextStyled>
+          <TextStyled margin="0 0 32px 0" size="16px" textColor="secondary">@babel/plugin-transform-react-display-name</TextStyled>
+          <Image width="800px" src={images.babelPresetReact} />
+        </Slide>
+        {/* ============================= 25 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">@babel/preset-react</TextStyled>
+          <Code textSize="28px">{"{ \"pragma\": \"h\" }"}</Code>
+          <Image width="721px" src={images.babelPresetReactPragma} />
         </Slide>
       </Deck>
     );
