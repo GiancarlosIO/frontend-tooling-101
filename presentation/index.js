@@ -48,7 +48,11 @@ const images = {
   babelPresetEnvEntry: require("../assets/babel-preset-env-entry.png"),
   babelPresetEnvUsage: require("../assets/babel-preset-env-usage.png"),
   babelPresetReact: require("../assets/babel-preset-react.png"),
-  babelPresetReactPragma: require("../assets/babel-preset-react-pragma.png")
+  babelPresetReactPragma: require("../assets/babel-preset-react-pragma.png"),
+  babelPluginTransformReactConstantElements: require("../assets/babel-plugin-react-constant-elements.png"),
+  babelPluginTransformReactRemovePropTypes: require("../assets/babel-plugin-transform-react-remove-proptypes.png"),
+  babelPluginTransformReactInlineElemens: require("../assets/babel-plugin-transform-react-inline-elements.png"),
+  babelPluginTransformRemoveConsoleDebugger: require("../assets/babel-plugin-transform-remove-console-debugger.png")
 };
 
 const ListItemStyled = styled(ListItem)`
@@ -396,6 +400,46 @@ define(['react', 'jquery'], function (dep1, dep2) {
           <TextStyled margin="0 0 0 0">@babel/preset-react</TextStyled>
           <Code textSize="28px">{"{ \"pragma\": \"h\" }"}</Code>
           <Image width="721px" src={images.babelPresetReactPragma} />
+        </Slide>
+        {/* ============================= 26 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">@babel/plugin-transform-react-constant-elements (PRODUCTION ONLY)</TextStyled>
+          <Image width="721px" src={images.babelPluginTransformReactConstantElements} />
+        </Slide>
+        {/* ============================= 27 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">babel-plugin-transform-react-remove-prop-types (PRODUCTION ONLY)</TextStyled>
+          <Image width="721px" src={images.babelPluginTransformReactRemovePropTypes} />
+        </Slide>
+        {/* ============================= 28 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">@babel/plugin-transform-react-inline-elements (PRODUCTION ONLY)</TextStyled>
+          <Image width="721px" src={images.babelPluginTransformReactInlineElemens} />
+        </Slide>
+        {/* ============================= 29 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">babel-transform-remove-console</TextStyled>
+          <TextStyled margin="0 0 0 0">babel-transform-remove-debugger</TextStyled>
+          <Image src={images.babelPluginTransformRemoveConsoleDebugger} />
+        </Slide>
+        {/* ============================= 30 =============================== */}
+        <Slide transition={["fade"]} bgColor="white" textColor="primary">
+          <TextStyled margin="0 0 0 0">Extra babel plugins</TextStyled>
+          <List>
+            <ListItemStyled>dynamic-import-node</ListItemStyled>
+            <ListItemStyled>babel-plugin-module-resolver</ListItemStyled>
+            <ListItemStyled>babel-plugin-import-graphql</ListItemStyled>
+          </List>
+        </Slide>
+        {/* ============================= 31 =============================== */}
+
+        <Slide transition={["zoom"]} bgColor="white">
+          <Heading size={1} fit caps lineHeight={1} textColor="primary">
+          🔥 Webpack 🔥
+          </Heading>
+          {/* <Text margin="10px 0 0" textColor="white" size={1} fit bold>
+            open the presentation/index.js file to get started
+          </Text> */}
         </Slide>
       </Deck>
     );
