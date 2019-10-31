@@ -563,8 +563,8 @@ define(['react', 'jquery'], function (dep1, dep2) {
             { loc: [0, 5], title: "Primary Dll" },
             { loc: [5, 9], title: "Primary Dll" },
             { loc: [9, 19], title: "Primary Dll" },
-            { loc: [20, 29], title: "Primary Dll" },
-            { loc: [29, 42], title: "Primary Dll" }
+            { loc: [20, 29], title: "Secondary Dll" },
+            { loc: [29, 42], title: "Secondary Dll" }
           ]}
         />
         {/* ============================= 46 =============================== */}
@@ -602,6 +602,7 @@ define(['react', 'jquery'], function (dep1, dep2) {
           lang="html"
           code={require("raw-loader!../assets/code/webpackDjangoUrl.code")}
           textSize="22px"
+          style={{ paddingTop: 20 }}
           ranges={[
             { loc: [0, 14], title: "Django Webpack template tag" }
           ]}
@@ -613,12 +614,14 @@ define(['react', 'jquery'], function (dep1, dep2) {
           <TextStyled textAlign="left">Handle cache invalidation on webpack side</TextStyled>
         </Slide>
         {/* ============================= 51 =============================== */}
+
         <CodeSlide
           lang="html"
           code={require("raw-loader!../assets/code/webpackDjangoUrl2.code")}
           textSize="24px"
+          style={{ paddingTop: -50 }}
           ranges={[
-            { loc: [0, 14], title: "Django Webpack template tag" }
+            { loc: [0, 10], title: "Django Webpack template tag" }
           ]}
           transition={["fade"]}
         />
@@ -643,8 +646,10 @@ define(['react', 'jquery'], function (dep1, dep2) {
           lang="js"
           code={require("raw-loader!../assets/code/webpackDjangoCssTag.py")}
           textSize="24px"
+          style={{ paddingTop: -50 }}
           ranges={[
-            { loc: [0, 13], title: "Handle css files" }
+            { loc: [0, 13], title: "Handle css files" },
+            { loc: [13, 15], title: "Handle css files" }
           ]}
           transition={["fade"]}
         />

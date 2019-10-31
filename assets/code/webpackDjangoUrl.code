@@ -11,3 +11,4 @@
 <!-- Django tag v1 -->
 <!-- the hotreload_static tag changes the url in production -->
 <script src="{% hotreload_static 'js/catalog.min.js' %}"></script>
+

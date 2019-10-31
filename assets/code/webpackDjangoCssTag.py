@@ -11,3 +11,8 @@ class WebpackCSSStaticFilesNode(StaticNode):
 @register.tag('webpack_css')
 def webpack_css_static(parser, token):
     return WebpackCSSStaticFilesNode.handle_token(parser, token)
+
+
+
+
+    
