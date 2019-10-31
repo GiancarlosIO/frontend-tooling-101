@@ -1,0 +1,13 @@
+<!-- Try 1 -->
+<script src="http://localhost:9000/static/js/catalog.min.js"></script>
+
+<!-- Try 2 -->
+{% if DEBUG %}
+  <script src="http://localhost:9000/static/js/catalog.min.js"></script>
+{% else %}
+  <script src="{% static 'js/catalog.min.js' %}"></script>
+{% endif %}
+
+<!-- Django tag v1 -->
+<!-- the hotreload_static tag changes the url in production -->
+<script src="{% hotreload_static 'js/catalog.min.js' %}"></script>

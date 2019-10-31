@@ -117,3 +117,4 @@ References:
 Webpack:
 - https://dev.to/sadarshannaiynar/demystifying-webpack-2f5n
 - http://www.webgraphviz.com/
+- https://lucasfcosta.com/2018/03/03/Software-Engineering-in-100-Quotes.html

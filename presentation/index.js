@@ -66,7 +66,8 @@ const images = {
   webpackPluginExample1: require("../assets/webpack-plugin-example-1.png"),
   webpackBundleAnalyzer: require("../assets/webpack-bundle-analyzer.png"),
   webpackBundleAnalyzer2: require("../assets/webpack-bundle-analyzer-2.png"),
-  webpackDllGraph: require("../assets/webpack-dll-graph.png")
+  webpackDllGraph: require("../assets/webpack-dll-graph.png"),
+  finish: require("../assets/finish.jpg")
 };
 
 const ListItemStyled = styled(ListItem)`
@@ -504,12 +505,12 @@ define(['react', 'jquery'], function (dep1, dep2) {
         />
         {/* ============================= 39 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">Webpack plugins</Heading>
+          <Heading size={6} bold margin="0 0 40px 0">Webpack plugins</Heading>
           <TextStyled>Plugins can be leveraged to perform a wider range of tasks like bundle optimization, asset management and injection of environment variables</TextStyled>
         </Slide>
         {/* ============================= 40 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">Webpack plugins</Heading>
+          <Heading size={6} bold margin="0 0 40px 0">Webpack plugins</Heading>
           <List>
             <ListItemStyled>lodash-webpack-plugin</ListItemStyled>
             <ListItemStyled>webpack-bundle-analyer</ListItemStyled>
@@ -539,17 +540,17 @@ define(['react', 'jquery'], function (dep1, dep2) {
         />
         {/* ============================= 42 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">Webpack Bundle Analyzer 🤗</Heading>
+          <Heading size={6} bold margin="0 0 40px 0">Webpack Bundle Analyzer 🤗</Heading>
           <Image src={images.webpackBundleAnalyzer} />
         </Slide>
         {/* ============================= 43 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">Webpack Bundle Analyzer 😠</Heading>
+          <Heading size={6} bold margin="0 0 40px 0">Webpack Bundle Analyzer 😠</Heading>
           <Image src={images.webpackBundleAnalyzer2} />
         </Slide>
         {/* ============================= 44 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">Webpack Dll Plugin</Heading>
+          <Heading size={6} bold margin="0 0 40px 0">Webpack Dll Plugin</Heading>
           <TextStyled>The DllPlugin and DllReferencePlugin provide means to split bundles in a way that can drastically improve build time performance</TextStyled>
         </Slide>
         {/* ============================= 45 =============================== */}
@@ -568,12 +569,92 @@ define(['react', 'jquery'], function (dep1, dep2) {
         />
         {/* ============================= 46 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">Webpack Dll Plugin (crehana)</Heading>
+          <Heading size={6} bold margin="0 0 40px 0">Webpack Dll Plugin (crehana)</Heading>
           <Image src={images.webpackDllGraph} />
         </Slide>
         {/* ============================= 47 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">⛏️ Webpack + Django ⛏️</Heading>
+          <Heading size={6} bold margin="0 0 40px 0">⛏️ Webpack + Django ⛏️</Heading>
+        </Slide>
+        {/* ============================= 48 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size={6} bold margin="0 0 40px 0">Webpack: Django Integration</Heading>
+          <TextStyled>¿Can we use webpack-html-plugin? 🤔</TextStyled>
+        </Slide>
+        {/* ============================= 48 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading textAlign="left" size={6} bold margin="0 0 40px 0">Webpack Django Integration: Challenges</Heading>
+          <List>
+            <ListItemStyled size="24px" textAlign="left">Django template tag to use dynamic urls for webpack assets</ListItemStyled>
+            <ListItemStyled size="24px" textAlign="left">Change the url for production and development</ListItemStyled>
+            <ListItemStyled size="24px" textAlign="left">Handle cache invalidation on webpack side</ListItemStyled>
+            <ListItemStyled size="24px" textAlign="left">Handle css files emitted by webpack</ListItemStyled>
+          </List>
+        </Slide>
+        {/* ============================= 48 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading textAlign="left" size={6} bold margin="0 0 40px 0">Webpack Django Integration</Heading>
+          <TextStyled textAlign="left">Django template tag to use dynamic urls for webpack assets</TextStyled>
+        </Slide>
+        {/* ============================= 49 =============================== */}
+
+        <CodeSlide
+          lang="html"
+          code={require("raw-loader!../assets/code/webpackDjangoUrl.code")}
+          textSize="22px"
+          ranges={[
+            { loc: [0, 14], title: "Django Webpack template tag" }
+          ]}
+          transition={["fade"]}
+        />
+        {/* ============================= 50 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading textAlign="left" size={6} bold margin="0 0 40px 0">Webpack Django Integration</Heading>
+          <TextStyled textAlign="left">Handle cache invalidation on webpack side</TextStyled>
+        </Slide>
+        {/* ============================= 51 =============================== */}
+        <CodeSlide
+          lang="html"
+          code={require("raw-loader!../assets/code/webpackDjangoUrl2.code")}
+          textSize="24px"
+          ranges={[
+            { loc: [0, 14], title: "Django Webpack template tag" }
+          ]}
+          transition={["fade"]}
+        />
+        {/* ============================= 52 =============================== */}
+
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading textAlign="left" size={6} bold margin="0 0 40px 0">Webpack Django Integration: Handle cache invalidation on webpack side</Heading>
+          <TextStyled textAlign="left" size="18px" />
+          <TextStyled textAlign="left" size="20px">We get the asset/chunk hash by generating a manifest.json file.</TextStyled>
+          <Code style={{ display: "block" }} margin="0 0 32px 0" textAlign="left" textSize="20px">
+            {`{
+  "js/catalog.min.js": "js/catalog.3498042f.min.js
+}`}
+          </Code>
+          <TextStyled textAlign="left" size="20px">Django replaces the template tag argument. <br />From:</TextStyled>
+          <Code style={{ display: "block" }} margin="0 0 32px 0" textAlign="left" textSize="20px">{"<script src=\"{% webpack_static 'js/catalog.min.js' %}\"></script>"}</Code>
+          <TextStyled size="20px" textAlign="left">To:</TextStyled>
+          <Code style={{ display: "block" }} margin="0 0 32px 0" textAlign="left" textSize="20px">{"<script src=\"https://static.crehana.com/static/js/catalog.3498042f.min.js\"></script>"}</Code>
+        </Slide>
+        {/* ============================= 53 =============================== */}
+        <CodeSlide
+          lang="js"
+          code={require("raw-loader!../assets/code/webpackDjangoCssTag.py")}
+          textSize="24px"
+          ranges={[
+            { loc: [0, 13], title: "Handle css files" }
+          ]}
+          transition={["fade"]}
+        />
+        {/* ============================= 54 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading textColor="secondary" size={6}>That's it</Heading>
+          <Image width="800px" src={images.finish} />
+        </Slide>
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading textColor="primary" size={4}>Thanks.</Heading>
         </Slide>
       </Deck>
     );

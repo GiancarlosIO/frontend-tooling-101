@@ -1,0 +1,18 @@
+/**
+ *
+ * // From
+ * <script src="{% static 'js/catalog.min.js' %}"></script>
+ *
+ * // To
+ * <script src="https://static.crehana.com/static/js/catalog.3498042f.min.js"></script>
+ *
+ * /
+
+{
+  "js/catalog.min.js": "js/catalog.3498042f.min.js
+}
+
+
+
+
+
