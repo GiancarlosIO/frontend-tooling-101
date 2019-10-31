@@ -110,3 +110,9 @@
     4.2.3 Implementing the static pages script
 5. SSR
 
+
+
+References:
+
+Webpack:
+- https://dev.to/sadarshannaiynar/demystifying-webpack-2f5n

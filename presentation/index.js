@@ -52,7 +52,20 @@ const images = {
   babelPluginTransformReactConstantElements: require("../assets/babel-plugin-react-constant-elements.png"),
   babelPluginTransformReactRemovePropTypes: require("../assets/babel-plugin-transform-react-remove-proptypes.png"),
   babelPluginTransformReactInlineElemens: require("../assets/babel-plugin-transform-react-inline-elements.png"),
-  babelPluginTransformRemoveConsoleDebugger: require("../assets/babel-plugin-transform-remove-console-debugger.png")
+  babelPluginTransformRemoveConsoleDebugger: require("../assets/babel-plugin-transform-remove-console-debugger.png"),
+  webpack1: require("../assets/webpack-1.png"),
+  webpackGraph1: require("../assets/webpack-graph-1.png"),
+  webpackGraph2: require("../assets/webpack-graph-2.jpg"),
+  webpackGraph3: require("../assets/webpack-graph-3.jpg"),
+  webpackGraph4: require("../assets/webpack-graph-4.jpg"),
+  webpackGraph5: require("../assets/webpack-graph-5.png"),
+  webpackExplanation: require("../assets/webpack-explanation.png"),
+  webpackLoader: require("../assets/webpack-loaders.png"),
+  webpackLoader1: require("../assets/webpack-loaders-1.png"),
+  webpackLoader2: require("../assets/webpack-loaders-2.png"),
+  webpackPluginExample1: require("../assets/webpack-plugin-example-1.png"),
+  webpackBundleAnalyzer: require("../assets/webpack-bundle-analyzer.png"),
+  webpackBundleAnalyzer2: require("../assets/webpack-bundle-analyzer-2.png")
 };
 
 const ListItemStyled = styled(ListItem)`
@@ -63,6 +76,7 @@ const ListItemStyled = styled(ListItem)`
 const TextStyled = styled(Text)`
   font-size: ${(props) => props.size || "32px"} !important;
   line-height: ${(props) => props.lineHeight || "1.5"} !important;
+  font-weight: ${(props) => props.bold ? 700 : 400};
 `;
 
 const theme = createTheme({
@@ -285,68 +299,20 @@ var createMethod = function (IS_INCLUDES) {
           </List>
         </Slide>
         {/* ============================= 14 =============================== */}
-        <CodeSlide
-          transition={["fade", "fade"]}
-          code={`// Javascript module system
-
-// ES6 Modules
-import React from 'react';
-export default MyComponent;
-
-
-// Commonjs
-const React = require('react');
-module.exports = MyComponent;
-
-
-// AMD: Async Module Definition
-define(['react', 'jquery'], function (dep1, dep2) {
-    //Define the module value by returning a value.
-    return function () {};
-});
-
-// UMD: Universal Module Definition (pattern to configure several module system)
-(function (root, factory) {
-    if (typeof define === "function" && define.amd) {
-        define(["react", "jquery"], factory);
-    } else if (typeof exports === "object") {
-        module.exports = factory(require("react"), require("jquery"));
-    } else {
-        root.Requester = factory(root.$, root._);
-    }
-}(this, function (react, $) {
-    // this is where I defined my module implementation
-
-    var Requester = { // ... };
-
-    return Requester;
-}));
-
-            `}
-          lang="js"
-          textSize={24}
-          ranges={[
-            { loc: [2, 5], title: "ES6 Modules" },
-            { loc: [7, 10], title: "Commonjs" },
-            { loc: [12, 17], title: "Commonjs" },
-            { loc: [18, 35], title: "AMD: Async Module Definition" }
-          ]}
-        />
-        {/* ============================= 15 =============================== */}
         <Slide transition={["fade"]} bgColor="white" textColor="primary">
           <TextStyled>babel.config.js</TextStyled>
         </Slide>
-        {/* ============================= 16 =============================== */}
+        {/* ============================= 15 =============================== */}
         <Slide transition={["fade"]} bgColor="white" textColor="primary">
           <TextStyled margin="0 0 32px 0">babel-plugin-styled-components</TextStyled>
           <Image src={images.babelPluginStyledComponents} />
         </Slide>
-        {/* ============================= 17 =============================== */}
+        {/* ============================= 16 =============================== */}
         <Slide transition={["fade"]} bgColor="white" textColor="primary">
           <TextStyled margin="0 0 32px 0">babel-plugin-lodash</TextStyled>
           <Image src={images.babelPluginLodashExample} />
         </Slide>
-        {/* ============================= 18 =============================== */}
+        {/* ============================= 17 =============================== */}
         <Slide transition={["fade"]} bgColor="white" textColor="primary">
           <TextStyled margin="0 0 32px 0">babel-plugin-recharts</TextStyled>
           <Image src={images.babelPluginRecharts} />
@@ -432,14 +398,153 @@ define(['react', 'jquery'], function (dep1, dep2) {
           </List>
         </Slide>
         {/* ============================= 31 =============================== */}
-
         <Slide transition={["zoom"]} bgColor="white">
           <Heading size={1} fit caps lineHeight={1} textColor="primary">
           🔥 Webpack 🔥
           </Heading>
-          {/* <Text margin="10px 0 0" textColor="white" size={1} fit bold>
-            open the presentation/index.js file to get started
-          </Text> */}
+        </Slide>
+        {/* ============================= 32 =============================== */}
+        <CodeSlide
+          transition={["fade", "fade"]}
+          code={`// Javascript module system
+
+// ES6 Modules
+import React from 'react';
+export default MyComponent;
+
+
+// Commonjs
+const React = require('react');
+module.exports = MyComponent;
+
+
+// AMD: Async Module Definition
+define(['react', 'jquery'], function (dep1, dep2) {
+    //Define the module value by returning a value.
+    return function () {};
+});
+
+// UMD: Universal Module Definition (pattern to configure several module system)
+(function (root, factory) {
+    if (typeof define === "function" && define.amd) {
+        define(["react", "jquery"], factory);
+    } else if (typeof exports === "object") {
+        module.exports = factory(require("react"), require("jquery"));
+    } else {
+        root.Requester = factory(root.$, root._);
+    }
+}(this, function (react, $) {
+    // this is where I defined my module implementation
+
+    var Requester = { // ... };
+
+    return Requester;
+}));
+
+            `}
+          lang="js"
+          textSize={24}
+          ranges={[
+            { loc: [2, 5], title: "ES6 Modules" },
+            { loc: [7, 10], title: "Commonjs" },
+            { loc: [12, 17], title: "Commonjs" },
+            { loc: [18, 35], title: "AMD: Async Module Definition" }
+          ]}
+        />
+        {/* ============================= 33 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <TextStyled bold margin="0 0 0 0">What is webpack? 🤔</TextStyled>
+          <TextStyled size="20px">Static module bundler for modern JavaScript applications</TextStyled>
+          <Image src={images.webpack1} />
+        </Slide>
+        {/* ============================= 34 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <TextStyled bold margin="0 0 40px 0">Dependency Graph? 🤔</TextStyled>
+
+          <div style={{ display: "flex" }}>
+            <div style={{ width: "50%" }}>
+              <Image src={images.webpackGraph5} />
+            </div>
+            <div style={{ width: "50%" }}>
+              <Image margin="32px auto 40px auto" src={images.webpackGraph1} />
+              <Image margin="0 auto 40px auto" src={images.webpackGraph2} />
+              <Image margin="0 auto 40px auto" src={images.webpackGraph3} />
+              <Image margin="0 auto 40px auto" src={images.webpackGraph4} />
+            </div>
+          </div>
+        </Slide>
+        {/* ============================= 35 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <TextStyled bold margin="0 0 0 0">🔥 Webpack 🔥</TextStyled>
+          <TextStyled size="16px">By Sean Larkin</TextStyled>
+          <Image margin="0 auto 40px auto" src={images.webpackExplanation} />
+        </Slide>
+        {/* ============================= 36 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <TextStyled bold margin="0 0 0 0">Webpack loaders</TextStyled>
+          <Image margin="0 auto 40px auto" src={images.webpackLoader} />
+        </Slide>
+        {/* ============================= 37 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <TextStyled bold margin="0 0 0 0">Writing a loader</TextStyled>
+          <Image margin="0 auto 40px auto" src={images.webpackLoader} />
+        </Slide>
+        {/* ============================= 38 =============================== */}
+        <CodeSlide
+          code={require("raw-loader!../assets/code/webpackLoader.code")}
+          lang="js"
+          transition={["fade"]}
+          textSize={24}
+          ranges={[
+            { loc: [0, 16], title: "webpack config" },
+            { loc: [16, 26], title: "custom loader" },
+            { loc: [26, 33], title: "source files" }
+          ]}
+        />
+        {/* ============================= 39 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size="6" bold margin="0 0 40px 0">Webpack plugins</Heading>
+          <TextStyled>Plugins can be leveraged to perform a wider range of tasks like bundle optimization, asset management and injection of environment variables</TextStyled>
+        </Slide>
+        {/* ============================= 40 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size="6" bold margin="0 0 40px 0">Webpack plugins</Heading>
+          <List>
+            <ListItemStyled>lodash-webpack-plugin</ListItemStyled>
+            <ListItemStyled>webpack-bundle-analyer</ListItemStyled>
+            <ListItemStyled>optimize-css-assets-webpack-plugin</ListItemStyled>
+            <ListItemStyled>terser-webpack-plugin</ListItemStyled>
+            <ListItemStyled>Manifest webpack plugin (custom)</ListItemStyled>
+            <ListItemStyled>webpack.IgnorePlugin</ListItemStyled>
+            <ListItemStyled>webpack.DefinePlugin</ListItemStyled>
+            <ListItemStyled>webpack-build-notifier</ListItemStyled>
+            <ListItemStyled> webpack-merge</ListItemStyled>
+            <ListItemStyled> webpack.NamedModulesPlugin</ListItemStyled>
+            <ListItemStyled> webpack.NoEmitOnErrorsPlugin</ListItemStyled>
+            <ListItemStyled> webpack-html-plugin</ListItemStyled>
+            <ListItemStyled> html-webpack-hard-disk-plugin</ListItemStyled>
+          </List>
+        </Slide>
+        {/* ============================= 41 =============================== */}
+        <CodeSlide
+          code={require("raw-loader!../assets/code/webpackPluginsOptimization.code")}
+          lang="js"
+          transition={["fade"]}
+          textSize={24}
+          ranges={[
+            { loc: [16, 33], title: "Terser webpack plugin (default)" },
+            { loc: [33, 40], title: "Optimize css Assets Plugin" }
+          ]}
+        />
+        {/* ============================= 42 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size="6" bold margin="0 0 40px 0">Webpack Bundle Analyzer</Heading>
+          <Image src={images.webpackBundleAnalyzer} />
+        </Slide>
+        {/* ============================= 43 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size="6" bold margin="0 0 40px 0">Webpack Bundle Analyzer</Heading>
+          <Image src={images.webpackBundleAnalyzer2} />
         </Slide>
       </Deck>
     );

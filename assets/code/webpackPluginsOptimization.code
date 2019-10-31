@@ -1,0 +1,44 @@
+module.exports = {
+  entry: "./index.js",
+  optimization: {
+    /* https://medium.com/@kenneth_chau/speeding-up-webpack-typescript-incremental-builds-by-7x-3912ba4c1d15 */
+    removeAvailableModules: isProduction,
+    removeEmptyChunks: isProduction,
+    /* ==== */
+    splitChunks: {
+      name: !isProduction,
+      chunks: "async",
+      minSize: 30000,
+      maxAsyncRequests: 5,
+      maxInitialRequests: 3
+    },
+    minimizer: isProduction
+      ? [
+        new TerserWebpackPlugin({
+          terserOptions: {
+            warnings: false,
+            compress: {
+              comparisons: false
+            },
+            parse: {},
+            // Disabling mangling for local profiling
+            mangle: !argv.reactProfiler,
+            output: {
+              comments: false,
+              ascii_only: true
+            }
+          },
+          parallel: true,
+          sourceMap: true
+        }),
+        new OptimizeCssAssetsPlugin({
+          assetNameRegExp: /\.optimize\.css$/g,
+          cssProcessor: require('cssnano'),
+          cssProcessorPluginOptions: {
+            preset: ['default', {discardComments:{removeAll:true}}],
+          },
+        })
+      ]
+      : []
+  }
+};
