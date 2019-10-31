@@ -12,7 +12,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/dist/"
+    publicPath: "/frontend-tooling-101/"
   },
   plugins: [
     new webpack.DefinePlugin({
