@@ -2,6 +2,7 @@
 
 var path = require("path");
 var webpack = require("webpack");
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 module.exports = {
   entry: [
@@ -19,29 +20,25 @@ module.exports = {
         "NODE_ENV": JSON.stringify("production")
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false
-      }
-    })
+    new UglifyJsPlugin(),
   ],
   module: {
-    loaders: [{
+    rules: [{
       test: /\.md$/,
-      loader: "html-loader!markdown-loader?gfm=false"
+      use: "html-loader!markdown-loader?gfm=false"
     }, {
       test: /\.(js|jsx)$/,
       exclude: /node_modules/,
-      loader: "babel-loader"
+      use: ["babel-loader"]
     }, {
       test: /\.css$/,
-      loader: "style-loader!css-loader"
+      use: ["style-loader", "css-loader"]
     }, {
       test: /\.(png|jpg|gif)$/,
-      loader: "url-loader?limit=8192"
+      use: ["url-loader?limit=8192"]
     }, {
       test: /\.svg$/,
-      loader: "url-loader?limit=10000&mimetype=image/svg+xml"
+      use: ["url-loader?limit=10000&mimetype=image/svg+xml"]
     }]
   }
 };
