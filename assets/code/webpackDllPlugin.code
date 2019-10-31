@@ -1,0 +1,43 @@
+const primaryDll = {
+  context: __dirname,
+  entry: {
+    vendor: vendorEntries
+  },
+  output: {
+    library: '[name]_dll',
+    filename: `[name]${isProduction ? '.[hash:8]' : ''}.dll.js`,
+  },
+  plugins: [
+    new webpack.DllPlugin({
+      context: __dirname,
+      path: join(__dirname, '../../jsx/dll/[name]-manifest.json'),
+      name: '[name]_dll',
+    }),
+  ],
+  stats: 'errors-only',
+  devtool: 'source-map',
+};
+
+const secondaryDll = {
+  context: __dirname,
+  output: {
+    library: '[name]_dll',
+    filename: `[name]${isProduction ? '.[hash:8]' : ''}.dll.js`,
+  },
+  entry: {
+    secondaryVendor: secondaryVendorEntries
+  },
+  plugins: [
+    new webpack.DllPlugin({
+      context: __dirname,
+      path: join(__dirname, '../../jsx/dll/[name]-manifest.json'),
+      name: '[name]_dll',
+    }),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require('../../jsx/dll/vendor-manifest.json'), // eslint-disable-line
+    })
+  ],
+  stats: 'errors-only',
+  devtool: 'source-map',
+};

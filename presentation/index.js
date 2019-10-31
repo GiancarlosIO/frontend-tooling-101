@@ -65,7 +65,8 @@ const images = {
   webpackLoader2: require("../assets/webpack-loaders-2.png"),
   webpackPluginExample1: require("../assets/webpack-plugin-example-1.png"),
   webpackBundleAnalyzer: require("../assets/webpack-bundle-analyzer.png"),
-  webpackBundleAnalyzer2: require("../assets/webpack-bundle-analyzer-2.png")
+  webpackBundleAnalyzer2: require("../assets/webpack-bundle-analyzer-2.png"),
+  webpackDllGraph: require("../assets/webpack-dll-graph.png")
 };
 
 const ListItemStyled = styled(ListItem)`
@@ -538,13 +539,41 @@ define(['react', 'jquery'], function (dep1, dep2) {
         />
         {/* ============================= 42 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">Webpack Bundle Analyzer</Heading>
+          <Heading size="6" bold margin="0 0 40px 0">Webpack Bundle Analyzer 🤗</Heading>
           <Image src={images.webpackBundleAnalyzer} />
         </Slide>
         {/* ============================= 43 =============================== */}
         <Slide transition={["fade"]} bgColor="white">
-          <Heading size="6" bold margin="0 0 40px 0">Webpack Bundle Analyzer</Heading>
+          <Heading size="6" bold margin="0 0 40px 0">Webpack Bundle Analyzer 😠</Heading>
           <Image src={images.webpackBundleAnalyzer2} />
+        </Slide>
+        {/* ============================= 44 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size="6" bold margin="0 0 40px 0">Webpack Dll Plugin</Heading>
+          <TextStyled>The DllPlugin and DllReferencePlugin provide means to split bundles in a way that can drastically improve build time performance</TextStyled>
+        </Slide>
+        {/* ============================= 45 =============================== */}
+        <CodeSlide
+          code={require("raw-loader!../assets/code/webpackDllPlugin.code")}
+          lang="js"
+          transition={["fade"]}
+          textSize={24}
+          ranges={[
+            { loc: [0, 5], title: "Primary Dll" },
+            { loc: [5, 9], title: "Primary Dll" },
+            { loc: [9, 19], title: "Primary Dll" },
+            { loc: [20, 29], title: "Primary Dll" },
+            { loc: [29, 42], title: "Primary Dll" }
+          ]}
+        />
+        {/* ============================= 46 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size="6" bold margin="0 0 40px 0">Webpack Dll Plugin (crehana)</Heading>
+          <Image src={images.webpackDllGraph} />
+        </Slide>
+        {/* ============================= 47 =============================== */}
+        <Slide transition={["fade"]} bgColor="white">
+          <Heading size="6" bold margin="0 0 40px 0">⛏️ Webpack + Django ⛏️</Heading>
         </Slide>
       </Deck>
     );
